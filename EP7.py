@@ -18,6 +18,7 @@ filemenu.add_command(label='Import CSV')
 filemenu.add_command(label='Export to Google Sheet')
 #Help menu
 def About():
+    print("About Menu")
     messagebox.showinfo('About', 'Hello, This Program is saving data program\nIf you want to donate to me\nJust 1 BTC\nBTC address: knb12*562')
 helpmenu = Menu(menubar,tearoff=0)
 menubar.add_cascade(label='Help',menu=helpmenu)
