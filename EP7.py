@@ -4,7 +4,7 @@ from datetime import datetime
 import csv
 
 root = Tk()
-root.title('Cost expense')
+root.title('Cost expense versin 1.0 by Los Blancos')
 root.geometry('1200x600+100+100')
 ############
 #Menu Bar
@@ -29,7 +29,7 @@ menubar.add_cascade(label='Donate',menu=donatemenu)
 ############
 
 Img1 = PhotoImage(file=r'C:\Users\Asus\Pictures\GUI picture\wallet.png')
-Img1 = Img1.subsample(5)
+Img1 = Img1.subsample(10)
 Img2 = PhotoImage(file=r'C:\Users\Asus\Pictures\GUI picture\Koffee.png')
 Img2 = Img2.subsample(25)
 Img3 = PhotoImage(file=r'C:\Users\Asus\Pictures\GUI picture\calculator.png')
@@ -74,7 +74,7 @@ def Save(event=None):
     try:
         total = float(price) * int(amount)
         print('{} List: {}, Price: {} baht, Amout: {},Total: {}'.format(time, expense, price, amount, total))
-        text = '{} List: {}, Price: {} baht, Amout: {},Total: {}'.format(time, expense, price, amount, total)
+        text = '{} List: {}\n Price: {} baht, Amout: {},Total: {}'.format(time, expense, price, amount, total)
         v_result.set(text)
         # clear old data in box(textentry)
         v_expense.set('')
@@ -82,7 +82,7 @@ def Save(event=None):
         v_amount.set('')
 
         # save data to csv and don't forget to import csv!!!
-        with open('savedata.csv', 'a', encoding='utf-8',
+        with open(r'C:\Users\Asus\PycharmProjects\watcha101\savedata.csv', 'a', encoding='utf-8',
                   newline='') as f:  # encoding='utf-8' is make it can type Thai Language
             # with is command to open file automatic
             # 'a' is append| It can continue saving file after old data
